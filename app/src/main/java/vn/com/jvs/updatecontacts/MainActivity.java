@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String buildNewNulber(String input) {
         String newNumber = "";
-        if (input.contains("+84")) {
+        if (input.startsWith("+84")) {
             input = input.replace("+84","0");
         }
         String startInput = input.substring(0, 4);
@@ -204,56 +204,56 @@ public class MainActivity extends AppCompatActivity {
         boolean check84 = checkBox.isChecked();
 
         // Viettell
-        if (startInput.contains("0169")) {
+        if (startInput.startsWith("0169")) {
             if (check84) {
                 newNumber = "+8439" + endInput;
             } else {
                 newNumber = "039" + endInput;
             }
         }
-        if (startInput.contains("0168")) {
+        if (startInput.startsWith("0168")) {
             if (check84) {
                 newNumber = "+8438" + endInput;
             } else {
                 newNumber = "038" + endInput;
             }
         }
-        if (startInput.contains("0167")) {
+        if (startInput.startsWith("0167")) {
             if (check84) {
                 newNumber = "+8437" + endInput;
             } else {
                 newNumber = "037" + endInput;
             }
         }
-        if (startInput.contains(" 0166")) {
+        if (startInput.startsWith(" 0166")) {
             if (check84) {
                 newNumber = "+8436" + endInput;
             } else {
                 newNumber = "036" + endInput;
             }
         }
-        if (startInput.contains("0165")) {
+        if (startInput.startsWith("0165")) {
             if (check84) {
                 newNumber = "+8435" + endInput;
             } else {
                 newNumber = "035" + endInput;
             }
         }
-        if (startInput.contains("0164")) {
+        if (startInput.startsWith("0164")) {
             if (check84) {
                 newNumber = "+8434" + endInput;
             } else {
                 newNumber = "034" + endInput;
             }
         }
-        if (startInput.contains("0163")) {
+        if (startInput.startsWith("0163")) {
             if (check84) {
                 newNumber = "+8433" + endInput;
             } else {
                 newNumber = "033" + endInput;
             }
         }
-        if (startInput.contains("0162")) {
+        if (startInput.startsWith("0162")) {
             if (check84) {
                 newNumber = "+8432" + endInput;
             } else {
@@ -262,35 +262,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Mobi
-        if (startInput.contains(" 0120")) {
+        if (startInput.startsWith(" 0120")) {
             if (check84) {
                 newNumber = "+8470" + endInput;
             } else {
                 newNumber = "070" + endInput;
             }
         }
-        if (startInput.contains("0121")) {
+        if (startInput.startsWith("0121")) {
             if (check84) {
                 newNumber = "+8479" + endInput;
             } else {
                 newNumber = "079" + endInput;
             }
         }
-        if (startInput.contains("0122")) {
+        if (startInput.startsWith("0122")) {
             if (check84) {
                 newNumber = "+8477" + endInput;
             } else {
                 newNumber = "077" + endInput;
             }
         }
-        if (startInput.contains("0126")) {
+        if (startInput.startsWith("0126")) {
             if (check84) {
                 newNumber = "+8476" + endInput;
             } else {
                 newNumber = "076" + endInput;
             }
         }
-        if (startInput.contains("0128")) {
+        if (startInput.startsWith("0128")) {
             if (check84) {
                 newNumber = "+8478" + endInput;
             } else {
@@ -299,35 +299,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Vina
-        if (startInput.contains("0124")) {
+        if (startInput.startsWith("0124")) {
             if (check84) {
                 newNumber = "+8484" + endInput;
             } else {
                 newNumber = "084" + endInput;
             }
         }
-        if (startInput.contains("0127")) {
+        if (startInput.startsWith("0127")) {
             if (check84) {
                 newNumber = "+8481" + endInput;
             } else {
                 newNumber = "081" + endInput;
             }
         }
-        if (startInput.contains("0129")) {
+        if (startInput.startsWith("0129")) {
             if (check84) {
                 newNumber = "+8482" + endInput;
             } else {
                 newNumber = "082" + endInput;
             }
         }
-        if (startInput.contains("0123")) {
+        if (startInput.startsWith("0123")) {
             if (check84) {
                 newNumber = "+8483" + endInput;
             } else {
                 newNumber = "083" + endInput;
             }
         }
-        if (startInput.contains("0125")) {
+        if (startInput.startsWith("0125")) {
             if (check84) {
                 newNumber = "+8485" + endInput;
             } else {
@@ -336,14 +336,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Vietnam
-        if (startInput.contains("0186")) {
+        if (startInput.startsWith("0186")) {
             if (check84) {
                 newNumber = "+8456" + endInput;
             } else {
                 newNumber = "056" + endInput;
             }
         }
-        if (startInput.contains("0188")) {
+        if (startInput.startsWith("0188")) {
             if (check84) {
                 newNumber = "+8458" + endInput;
             } else {
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Gtel
-        if (startInput.contains("0199")) {
+        if (startInput.startsWith("0199")) {
             if (check84) {
                 newNumber = "+8459" + endInput;
             } else {
