@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- margin -->
+    <dimen name="margin_common">5dp</dimen>
+    <dimen name="margin_material">16dp</dimen>
+
+    <dimen name="margin_top_txt_empty">90dp</dimen>
+    <dimen name="margin_bottom_btn">50dp</dimen>
+
+    <dimen name="width_border_btn">1dp</dimen>
+
+    <dimen name="app_default_input_corner">6dp</dimen>
+</resources>

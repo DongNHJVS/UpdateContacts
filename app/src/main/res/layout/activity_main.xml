@@ -1,62 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ListView
-        android:id="@+id/list_item"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="vn.com.jvs.updatecontacts.viewModel.MainViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="110dp">
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:context=".view.MainActivity">
 
-    </ListView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:visibility="gone"
-        android:id="@+id/list_item_null"
-        android:text="Empty"/>
+            <TextView
+                android:id="@+id/list_item_null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_txt_empty"
+                app:bindingViewVisibility="@{viewModel.viewNull}"
+                android:gravity="center"
+                android:text="@string/app_empty"
+                android:visibility="visible" />
 
-    <CheckBox
-        android:id="@+id/check_84"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="136dp"
-        android:text="Convert +84"
-        app:layout_constraintBottom_toTopOf="@+id/btn_update"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/list_swipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:indeterminate="true"
-        app:layout_constraintBottom_toTopOf="@+id/check_84"
-        app:layout_constraintTop_toBottomOf="@+id/list_item"
-        tools:layout_constraintEnd_toEndOf="parent" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_item"
+                    android:layout_width="match_parent"
+                    app:bindingViewVisibility="@{viewModel.viewList}"
+                    android:layout_height="match_parent"
+                    app:adapterRecyclerView="@{viewModel.adapter}"
+                    android:scrollbars="none"/>
 
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:text="Update"
-        android:textColor="@color/colorWhile"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-</android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                app:bindingProgressBar="@{viewModel.process}"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common"
+                android:layout_marginTop="@dimen/margin_common"
+                android:layout_marginEnd="@dimen/margin_common"
+                android:indeterminate="true" />
+
+            <CheckBox
+                android:id="@+id/check_84"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common"
+                android:layout_marginTop="@dimen/margin_common"
+                android:layout_marginEnd="@dimen/margin_common"
+                android:gravity="center"
+                android:text="@string/app_checkbox" />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_common"
+                android:background="@drawable/bg_button"
+                android:text="@string/app_btn_update"
+                android:textColor="@color/colorWhile"
+                app:disableClickView="@{viewModel.clickEnable}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
