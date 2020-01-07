@@ -1,4 +1,4 @@
-package vn.com.jvs.updatecontacts.Ultil.Exts
+package vn.com.jvs.updatecontacts.ultil.exts
 
 import android.content.ContextWrapper
 import android.view.View

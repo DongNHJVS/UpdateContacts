@@ -9,5 +9,7 @@
 
     <dimen name="width_border_btn">1dp</dimen>
 
+    <dimen name="height_image_icon">40dp</dimen>
+
     <dimen name="app_default_input_corner">6dp</dimen>
 </resources>

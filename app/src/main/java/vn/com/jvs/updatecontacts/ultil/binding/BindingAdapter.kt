@@ -1,4 +1,4 @@
-package vn.com.jvs.updatecontacts.Ultil.Binding
+package vn.com.jvs.updatecontacts.ultil.binding
 
 import android.view.View
 import android.widget.ProgressBar
@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import vn.com.jvs.updatecontacts.Ultil.Exts.getParentActivity
+import vn.com.jvs.updatecontacts.ultil.exts.getParentActivity
 
 @BindingAdapter("adapterRecyclerView")
 fun setAdapterRecyclerView(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {

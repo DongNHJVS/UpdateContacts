@@ -13,6 +13,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_common"
+        android:layout_marginStart="@dimen/margin_common"
+        android:layout_marginEnd="@dimen/margin_common"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -21,48 +24,78 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="3dp"
             card_view:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="@dimen/height_image_icon"
+                        android:layout_height="@dimen/height_image_icon"
+                        app:srcCompat="@drawable/ic_contact" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center|start"
+                        android:paddingStart="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="@{viewModel.contact._name}"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="10">
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_contract" />
+                    android:layout_width="@dimen/height_image_icon"
+                    android:layout_height="@dimen/height_image_icon"
+                    app:srcCompat="@drawable/ic_phone_number" />
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="4"
-                    android:gravity="center|start"
-                    android:paddingStart="5dp"
-                    android:paddingLeft="5dp"
-                    android:text="@{viewModel.contact._name}"
-                    android:paddingEnd="0dp"
-                    android:paddingRight="0dp"
-                    android:textColor="@color/colorBlack" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_phone" />
-
-                <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@{viewModel.contact._phone}"
-                    android:layout_weight="4"
                     android:gravity="center"
                     android:textColor="@color/colorBlack" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="@dimen/height_image_icon"
+                        android:layout_height="@dimen/height_image_icon"
+                        app:srcCompat="@drawable/ic_type" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{viewModel.contact._type}"
+                        android:gravity="center"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
