@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import vn.com.jvs.updatecontacts.adapter.AdapterViewContact
 import vn.com.jvs.updatecontacts.model.ContractsModel
-import java.util.ArrayList
+import java.util.*
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MainViewModel : ViewModel() {
@@ -68,8 +68,8 @@ class MainViewModel : ViewModel() {
                             phoneNo = phoneNo.replace("(", "")
                             phoneNo = phoneNo.replace(")", "")
                             val phoneTemp = phoneNo.replace("+84", "0")
-                            // Chi lay 11 so
-                            if (phoneTemp.length >= 11) {
+                            // Chi lay 11 so va so may ban
+                            if (phoneTemp.length >= 11 && !phoneTemp.startsWith("02")) {
                                 val contracts = ContractsModel(name, phoneNo, id, type)
                                 _contractsList.add(contracts)
                             }
