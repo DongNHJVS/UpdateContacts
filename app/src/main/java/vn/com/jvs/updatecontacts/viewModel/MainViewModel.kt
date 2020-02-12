@@ -68,7 +68,7 @@ class MainViewModel : ViewModel() {
                             phoneNo = phoneNo.replace("(", "")
                             phoneNo = phoneNo.replace(")", "")
                             val phoneTemp = phoneNo.replace("+84", "0")
-                            // Chi lay 11 so va so may ban
+                            // Chi lay 11 so va so may di dong
                             if (phoneTemp.length >= 11 && !phoneTemp.startsWith("02")) {
                                 val contracts = ContractsModel(name, phoneNo, id, type)
                                 _contractsList.add(contracts)
